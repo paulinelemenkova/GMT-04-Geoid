@@ -1,0 +1,35 @@
+#!/bin/sh
+# Purpose: Geoid model map with coastline and grid crosses
+# Pseudocylindrical Eckert VI projection. Area: World.
+# GMT modules: gmtset, grd2cpt, grdimage, pscoast, psbasemap, psconvert
+# Step-1. Generate a file
+ps=Geoid_World.ps
+# Step-2. GMT set up
+gmt set FORMAT_GEO_MAP=dddF \
+    MAP_TITLE_OFFSET=0.5c \
+    MAP_FRAME_PEN=dimgray \
+    MAP_FRAME_WIDTH=0.1c \
+    MAP_TICK_PEN_PRIMARY=thinner,dimgray \
+    MAP_GRID_PEN_PRIMARY=thinnest \
+    MAP_GRID_CROSS_SIZE_PRIMARY=0.1i \
+    FONT_TITLE=36p,Palatino-Roman,black \
+    FONT_ANNOT_PRIMARY=12p,Helvetica,black \
+    FONT_LABEL=12p,Helvetica,black \
+# Step-3. Generate a color palette table from grid
+gmt grd2cpt geoid.egm96.grd -Crainbow > geoid.cpt
+# Step-4. Generate geoid image with shading
+gmt grdimage geoid.egm96.grd -I+a45+nt1 -Rg -JKs180/9i -Cgeoid.cpt -K > $ps
+# Step-5. Add basemap: grid, title, costline
+gmt pscoast -R -J \
+	-V -W0.25p \
+    -Di -B+t"Global Geoid Model Image" \
+	-Bxa60g30 -Bya30g30 \
+    -O -K >> $ps
+# Step-6. Add scale
+gmt psbasemap -R -J \
+    --FONT=33p,Palatino-Roman,black \
+    --MAP_ANNOT_OFFSET=0.7c \
+    -Lx4.5i/-1.0i+c50+w20000k+l"Pseudocylindrical Eckert VI projection. Scale, km"+f \
+    -O >> $ps
+# Step-7. Convert to image file using GhostScript
+gmt psconvert Geoid_World.ps -A1.5c -E720 -P -Tj -Z

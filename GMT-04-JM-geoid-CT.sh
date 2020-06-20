@@ -50,7 +50,6 @@ gmt grdcontour ct_geoid.nc -R -J -C1 -A5 -Wthinnest,dimgray -O -K >> $ps
 gmt psbasemap -R -J \
     --FONT=8p,Palatino-Roman,dimgray \
     --MAP_TITLE_OFFSET=0.3c \
-    -Tdx1.0c/1.3c+w0.3i+f2+l+o0.15i \
     -Lx13.4c/-2.7c+c50+w300k+l"Mercator projection. Scale (km)"+f \
     -UBL/0p/-75p -O -K >> $ps
     
@@ -61,8 +60,7 @@ gmt logo -Dx6.4/-3.5+o0.1i/0.1i+w2c -O -K >> $ps
 # Add subtitle
 gmt pstext -R0/10/0/15 -JX10/14 -X0.5c -Y7.1c -N -O \
     -F+f10p,Palatino-Roman,black+jLB >> $ps << EOF
-#3.0 22.3 World geoid image 2 min, version 9.2 EGM96
-4.0 22.5 EGM2008 2.5 Minute Interpolation Grid
+2.3 22.6 World geoid image 15 arc-min resolution, version 9.2 EGM96
 EOF
 
 # Convert to image file using GhostScript

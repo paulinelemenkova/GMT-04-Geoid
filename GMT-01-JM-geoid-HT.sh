@@ -17,10 +17,6 @@ gmt set FORMAT_GEO_MAP=dddF \
 # Step-3. Overwrite defaults of GMT
 gmtdefaults -D > .gmtdefaults
 
-#grdcut GEBCO_2019.nc -R19/37/30.5/41.5 -Ght_relief.nc # big s
-#grdcut GEBCO_2019.nc -R19/31/32/39 -Ght_relief.nc
-#grdcut ETOPO1_Ice_g_gmt4.grd -R19/31/32/39 -Ght_relief.nc
-
 # makecpt --help
 # Select a color palette
 gdalinfo geoid.egm96.grd -stats
@@ -36,7 +32,7 @@ gmt grdimage geoid.egm96.grd -Ccolors.cpt -R19/37/30.5/41.5 -JM6i -P -I+a15+ne0.
 gmt psbasemap -R -J \
     -Bpx4f1a1 -Bpyg4f1a1 -Bsxg2 -Bsyg2 \
     --MAP_TITLE_OFFSET=0.8c \
-    -B+t"Geoid regional model: the Aegean Sea region" -O -K >> $ps
+    -B+t"Geoid regional model: the Eastern Mediterranean Sea region" -O -K >> $ps
     
 # Add scale, directional rose
 gmt psbasemap -R -J \

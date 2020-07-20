@@ -57,8 +57,8 @@ gmt psbasemap -R -J \
 gmt psscale -Dg47/-2.9+w15.0c/0.4c+h+o0.3/0i+ml -R47/77/0/31 -J -Ccolors.cpt \
     --FONT_LABEL=8p,Helvetica,black \
     --FONT_ANNOT_PRIMARY=8p,Helvetica,black \
-    -Baf+l"Color scale: Haxby: Bill Haxby's color scheme for geoid & gravity [C=RGB]" \
-    -I0.2 -By+lmGal -O -K >> $ps
+    -Baf+l"Color scale: Haxby: Bill Haxby's color scheme for geoid heights, m [C=RGB]" \
+    -I0.2 -By+lm -O -K >> $ps
 
 # Add coastlines, borders, rivers
 gmt pscoast -R -J -P -Ia/thinnest,blue -Na -N1/thinner,red -Wthinner -Df -O -K >> $ps

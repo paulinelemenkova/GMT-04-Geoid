@@ -50,7 +50,8 @@ gmt psbasemap -R -J \
     -B+t"Geoid regional model: Beaufort Sea, Arctic Ocean" -O -K >> $ps
     
 # Add shorelines
-gmt grdcontour EGM2008BS.grd -R -J -C6 -A12 -Wthinnest,dimgray -O -K >> $ps
+gmt grdcontour EGM2008BS1.grd -R -J -C1 -A4 -Wthinnest,dimgray -O -K >> $ps
+gmt grdcontour EGM2008BS2.grd -R -J -C1 -A4 -Wthinnest,dimgray -O -K >> $ps
 
 # Add coastlines, borders, rivers
 gmt pscoast -R -J -P -Ia/thinnest,blue -W0.2p -Df -O -K >> $ps

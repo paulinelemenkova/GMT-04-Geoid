@@ -4,16 +4,16 @@
 
 # GMT set up
 gmt set FORMAT_GEO_MAP=dddF \
-MAP_FRAME_PEN=dimgray \
+MAP_FRAME_PEN=black \
 MAP_FRAME_WIDTH=0.1c \
 MAP_TITLE_OFFSET=1c \
 MAP_ANNOT_OFFSET=0.1c \
-MAP_TICK_PEN_PRIMARY=thinner,dimgray \
+MAP_TICK_PEN_PRIMARY=thinner,black \
 MAP_GRID_PEN_PRIMARY=thin,white \
 MAP_GRID_PEN_SECONDARY=thinnest,white \
 FONT_TITLE=12p,Palatino-Roman,black \
-FONT_ANNOT_PRIMARY=7p,Helvetica,dimgray \
-FONT_LABEL=7p,Helvetica,dimgray \
+FONT_ANNOT_PRIMARY=7p,Helvetica,black \
+FONT_LABEL=7p,Helvetica,black \
 
 # 'cent2_geoid/' - папка с ESRI GRDI файлами
 grdconvert n00w135/ EGM2008ct1.grd

@@ -1,5 +1,5 @@
 #!/bin/sh
-# Purpose: geoid of Iraq
+# Purpose: geoid of Jordan
 # GMT modules: gmtset, gmtdefaults, grdcut, makecpt, grdimage, psscale, grdcontour, psbasemap, gmtlogo, psconvert
 
 # GMT set up

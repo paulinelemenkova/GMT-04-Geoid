@@ -31,6 +31,7 @@ gmt makecpt -Cwysiwyg -T-44/48/1 > colors.cpt
 
 # Generate a file
 ps=Geoid_TZ.ps
+# image with 50% transparency
 gmt grdimage geoid_TZ.grd -Cwysiwyg -R29/42/-13/0 -JM6.5i -P -Xc -I+a15+ne0.75 -t50 -K > $ps
 
 # Add shorelines

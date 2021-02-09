@@ -1,5 +1,5 @@
 #!/bin/sh
-# Purpose: geoid of Tanzania
+# Purpose: geoid of Rwanda
 # GMT modules: gmtset, gmtdefaults, grdcut, makecpt, grdimage, psscale, grdcontour, psbasemap, gmtlogo, psconvert
 
 # GMT set up

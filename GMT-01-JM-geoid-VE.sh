@@ -1,5 +1,5 @@
 #!/bin/sh
-# Purpose: geoid of Panama
+# Purpose: geoid of Venezuela
 # GMT modules: gmtset, gmtdefaults, grdcut, makecpt, grdimage, psscale, grdcontour, psbasemap, gmtlogo, psconvert
 # http://soliton.vm.bytemark.co.uk/pub/cpt-city/kst/tn/33_blue_red.png.index.html
 
